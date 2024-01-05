@@ -22,10 +22,13 @@
               <a class="nav-link" href="#">Testimoni</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Category</a>
+              <a class="nav-link" href="#">Contact</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
+              <a class="nav-link" href="{{url('/login')}}">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url('/register')}}">Register</a>
             </li>
         </ul>
       </div>

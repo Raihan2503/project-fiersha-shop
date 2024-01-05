@@ -28,10 +28,9 @@
           <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Cart</a></li>
           <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Product</a></li>
           <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Testimoni</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Category</a></li>
           <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Contact</a></li>
         </ul>
-        <p class="text-center text-body-secondary">© 2023 Company, Inc</p>
+        <p class="text-center text-body-secondary">© 2024 Fiersha Shop</p>
       </footer>
     <script src="{{asset('bootstrap-5/js/bootstrap.bundle.min.js')}}"></script>
 </body>
