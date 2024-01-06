@@ -20,5 +20,7 @@ Route::get('/', function () {
 });
 
 Route::get('/login', [Login::class, 'index']);
+Route::post('/login', [Login::class, 'auth'])->name('login');
 Route::post('/register', [Register::class, 'store'])->name('register.store');
+Route::post('/logout', [Login::class, 'logout'])->name('logout');
 Route::get('/register', [Register::class, 'index']);
