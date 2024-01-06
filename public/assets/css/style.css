@@ -1,0 +1,14 @@
+body {font-family: 'Diphylleia', serif;}
+h1.main-text {font-family: 'Roboto', sans-serif;}
+.navbar-brand span {
+    margin-left: -12px;
+}
+div.jumbotron {
+    min-height: 800px; 
+    background-image: url('../images/cover-min.jpg') !important;
+    background-repeat: no-repeat;
+    background-position: 0 -80px;
+    background-size: cover;
+    padding: 2.5rem;
+    color: black m !important;
+}
