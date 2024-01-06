@@ -1,7 +1,7 @@
 <nav class="navbar bg-dark navbar-expand-md border-bottom border-body" data-bs-theme="dark">
     <div class="container">
       <a class="navbar-brand" href="/">
-        <img src="{{asset('assets/images/logo-fiersha2.png')}}" alt="" width="70" />
+        <img src="{{asset('assets/images/logo-fiersha2.png')}}" alt="" width="50" />
         <span>Fiersha Shop</span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,7 +13,7 @@
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Cart</a>
+            <a class="nav-link" href="#">Keranjang</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Product</a>
