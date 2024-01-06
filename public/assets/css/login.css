@@ -1,0 +1,9 @@
+form {display: block !important;}
+button.btn{width: 100%;}
+
+span{
+    width: 100%;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
