@@ -1,7 +1,7 @@
 <nav class="navbar bg-dark navbar-expand-md border-bottom border-body" data-bs-theme="dark">
     <div class="container">
       <a class="navbar-brand" href="/">
-        <img src="{{asset('assets/images/logo-fiersha2.png')}}" alt="" width="50" />
+        <img src="{{asset('assets/images/logo-fiersha2.png')}}" alt="" width="45" />
         <span>Fiersha Shop</span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,12 +39,6 @@
               </ul>
             </form>
           </li>
-          {{-- <ul class="dropdown-menu">
-            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">{{Auth::user()->username}}</button>
-            <li class="nav-item">
-              <a class="nav-link" href="{{url('/register')}}"></a>
-            </li>
-          </ul> --}}
           @endauth
         </ul>
       </div>
