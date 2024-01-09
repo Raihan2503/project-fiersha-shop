@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\KeranjangController;
 use App\Http\Controllers\Login;
 use App\Http\Controllers\Register;
 use Illuminate\Support\Facades\Route;
@@ -15,12 +17,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/login', [Login::class, 'index']);
 Route::post('/login', [Login::class, 'auth'])->name('login');
+Route::get('/keranjang', [KeranjangController::class, 'index']);
+Route::post('/keranjang/{id_produk}', [HomeController::class, 'store'])->name('keranjang.store');
+Route::delete('/keranjang/{id_produk}', [KeranjangController::class, 'destroy'])->name('keranjang.destroy');
 Route::post('/register', [Register::class, 'store'])->name('register.store');
 Route::post('/logout', [Login::class, 'logout'])->name('logout');
 Route::get('/register', [Register::class, 'index']);
+
+// middleware
+Route::middleware(['auth.check'])->group(function () {
+    // Definisi route yang hanya dapat diakses oleh pengguna yang sudah login
+    Route::get('/keranjang', [KeranjangController::class, 'index']);
+});

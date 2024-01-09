@@ -4,11 +4,37 @@ h1.main-text {font-family: 'Roboto', sans-serif;}
     margin-left: -12px;
 }
 div.jumbotron {
-    min-height: 800px; 
+    min-height: 700px;
     background-image: url('../images/cover-min.jpg') !important;
     background-repeat: no-repeat;
-    background-position: 0 -80px;
+    background-position: 0;
     background-size: cover;
     padding: 2.5rem;
-    color: black m !important;
 }
+.img-product{height: 260px;}
+div.keranjang-container { min-height: 400px;}
+input.form-kuantitas {
+   width: 25%;
+}
+div.keranjang {
+    margin-bottom: 14px !important;
+}
+img.rounded {width: 90px;}
+/* breakpoint */
+@media (min-width: 576px) { 
+    div.jumbotron {
+        max-height: 900px; 
+        background-image: url('../images/cover-min.jpg') !important;
+        background-repeat: no-repeat;
+        background-position: 0 -100px;
+        background-size: cover;
+    }
+    input.form-kuantitas {
+        width: 25% !important;
+        text-align: center;
+        padding: 5px;
+    }
+    div.keranjang {
+        margin-bottom: 0px !important;
+    }
+ }
