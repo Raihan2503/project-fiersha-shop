@@ -25,7 +25,7 @@
             <span>Rp. {{$item->harga}}</span>
         </div>
         <div class="col-md-3 keranjang">
-          <input type="number" class="form-control form-kuantitas" value="1" name="kuantitas">
+          <input type="number" class="form-control form-kuantitas" value="1" name="kuantitas" min="1" max="100">
         </div>
         <div class="col-md-3 keranjang">
             <form action="{{route('keranjang.destroy', $item->id)}}" method="POST">
