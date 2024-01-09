@@ -11,8 +11,12 @@ class Product extends Model
 {
     use HasFactory;
 
-    public function carts(): HasOne
+    public function carts(): HasMany
     {
-        return $this->hasOne(Carts::class, 'product_id');
+        return $this->hasMany(Carts::class, 'product_id');
+    }
+
+    public function user(): HasMany{
+        return $this->hasMany(User::class, 'id');
     }
 }

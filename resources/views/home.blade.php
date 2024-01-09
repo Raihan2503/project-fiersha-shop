@@ -1,12 +1,10 @@
 @if (session()->has('success'))
-<div class="container">
-  <div class="col-md-6">
+  <div class="col">
     <div class="alert alert-success alert-dismissible fade show" role="alert mt-3">
       {{session('success')}}
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
   </div>
-</div>
 @endif
 @extends('layout.layout')
 @section('content')

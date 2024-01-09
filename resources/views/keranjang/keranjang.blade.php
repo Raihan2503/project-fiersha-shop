@@ -1,7 +1,14 @@
 @extends('layout.layout')
-
 @section('content')
 <div class="container my-4 keranjang-container">
+@if (session()->has('success'))
+  <div class="col">
+    <div class="alert alert-success alert-dismissible fade show" role="alert mt-3">
+      {{session('success')}}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  </div>
+@endif
    <div class="row mt-3 text-white border-bottom border-2 p-3 bg-secondary rounded">
         <div class="col-sm-3 list-group fw-bold">Nama Produk</div>
         <div class="col-sm-3 list-group fw-bold">Harga Satuan</div>
@@ -21,8 +28,12 @@
           <input type="number" class="form-control form-kuantitas" value="1" name="kuantitas">
         </div>
         <div class="col-md-3 keranjang">
-            <button type="submit" class="btn btn-danger">Hapus</button>
-            <button type="submit" class="btn btn-primary">Beli</button>
+            <form action="{{route('keranjang.destroy', $item->id)}}" method="POST">
+                @method('delete')
+                @csrf
+                <button type="submit" class="btn btn-danger">Hapus</button>
+                <button type="submit" class="btn btn-primary">Beli</button>
+            </form>
         </div>
     </div>
    @endforeach
