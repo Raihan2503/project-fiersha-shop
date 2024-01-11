@@ -20,6 +20,17 @@ div.keranjang {
     margin-bottom: 14px !important;
 }
 img.rounded {width: 90px;}
+div.checkout-container{min-height: 500px;}
+div.checkout {width: 400px;}
+/* img.checkout {
+    max-width: 300px !important;
+    margin-left: -12px;
+    height: 100%;
+} */
+form {
+    display: inline;
+}
+form.form-checkout{display: block;}
 /* breakpoint */
 @media (min-width: 576px) { 
     div.jumbotron {
@@ -36,5 +47,11 @@ img.rounded {width: 90px;}
     }
     div.keranjang {
         margin-bottom: 0px !important;
+    }
+    div.checkout {width: 900px;}
+    img.checkout {
+        max-width: 300px !important;
+        margin-left: -12px;
+        height: 100%;
     }
  }

@@ -16,7 +16,7 @@
             <a class="nav-link" href="{{url('keranjang')}}">Keranjang</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Product</a>
+            <a class="nav-link" href="{{url('transaksi')}}">Status Transaksi</a>
           </li>
           <li class="nav-item">
               <a class="nav-link" href="#">Testimoni</a>

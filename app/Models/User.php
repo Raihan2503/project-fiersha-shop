@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use PhpParser\Node\Expr\FuncCall;
 
 class User extends Authenticatable
 {
@@ -48,6 +49,9 @@ class User extends Authenticatable
 
     public function carts(): HasMany{
         return $this->hasMany(Carts::class, 'user_id');
+    }
+    public function order(): HasMany{
+        return $this->hasMany(Order::class, 'user_id');
     }
 
     public function product(): BelongsToMany{
