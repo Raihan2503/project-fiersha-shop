@@ -32,7 +32,7 @@
                 @method('delete')
                 @csrf
                 <button type="submit" class="btn btn-danger">Hapus</button>
-                <button type="submit" class="btn btn-primary">Beli</button>
+                <a href="{{route('checkout.show', $item->id)}}" class="btn btn-primary">Checkout</a>
             </form>
         </div>
     </div>
