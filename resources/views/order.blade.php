@@ -27,13 +27,9 @@
             </div>
             <div class="col-md-3 keranjang">
                     @csrf
-                    <button type="submit" class="btn btn-primary">Pesan</button>
+                    <button type="submit" class="btn btn-primary" id="pay-button">Bayar</button>
                 </form>
-                <form action="{{route('keranjang.destroy', $items->id)}}" method="POST">
-                    @method('delete')
-                    @csrf
-                    <button type="submit" class="btn btn-danger">Hapus</button>
-                </form>
+                <a href="{{url('keranjang')}}" class="btn btn-danger">Batalkan</a>
             </div>
         </div>
 </div>

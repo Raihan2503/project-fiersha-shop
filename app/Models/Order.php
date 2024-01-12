@@ -21,6 +21,8 @@ class Order extends Model
         'kuantitas',
         'harga',
         'total_harga',
+        'status',
+        'snap_token',
         'gambar_produk'
     ];
 

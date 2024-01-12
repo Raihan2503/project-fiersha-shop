@@ -33,5 +33,6 @@
         <p class="text-center text-body-secondary">© 2024 Fiersha Shop</p>
       </footer>
     <script src="{{asset('bootstrap-5/js/bootstrap.bundle.min.js')}}"></script>
+    @yield('script')
 </body>
 </html>

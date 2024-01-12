@@ -15,9 +15,11 @@
           <li class="nav-item">
             <a class="nav-link" href="{{url('keranjang')}}">Keranjang</a>
           </li>
+          @auth
           <li class="nav-item">
-            <a class="nav-link" href="{{url('transaksi')}}">Status Transaksi</a>
+            <a class="nav-link" href="{{url('transaksi')}}">Transaksi</a>
           </li>
+          @endauth
           <li class="nav-item">
               <a class="nav-link" href="#">Testimoni</a>
             </li>

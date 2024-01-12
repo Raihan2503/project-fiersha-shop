@@ -23,6 +23,8 @@ return new class extends Migration
             $table->integer('kuantitas');
             $table->unsignedBigInteger('harga');
             $table->unsignedBigInteger('total_harga');
+            $table->string('status');
+            $table->string('snap_token')->nullable();
             $table->string('gambar_produk');
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

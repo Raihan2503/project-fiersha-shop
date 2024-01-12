@@ -20,13 +20,28 @@ class Transaksi extends Controller
 
     public function show($id) {
         $orders = Order::where('cart_id', $id)->get();
-        foreach($orders as $order) {}
+        foreach($orders as $order) {
+            $view_data = [
+                "title" => "Order",
+                "items" => $order
+            ];
+    
+            return view('detail-transaksi', $view_data);
+        }
         
-        $view_data = [
-            "title" => "Order",
-            "items" => $order
-        ];
+    }
 
-        return view('detail-transaksi', $view_data);
+    public function success($order) {
+        $orders = Order::where('cart_id', $order)->get();
+        foreach ($orders as $o) {
+            $o->status = 'berhasil';
+            $o->save();
+
+            $view_data = [
+                "title" => "Checkout Berhasil"
+            ];
+    
+            return view('message.success-transaksi', $view_data);
+        }
     }
 }

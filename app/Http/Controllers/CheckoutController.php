@@ -63,7 +63,7 @@ class CheckoutController extends Controller
 
         foreach($carts as $cart) {
             $orders = Order::create([
-                "user_id" => Auth::user()->id,
+                'user_id' => Auth::user()->id,
                 'product_id' => $cart->product_id,
                 'cart_id' => $cart->id,
                 'nama_produk' => $cart->nama_produk,
@@ -73,8 +73,29 @@ class CheckoutController extends Controller
                 'kuantitas' => $kuantitas,
                 'harga' => $cart->harga,
                 'total_harga' => $total_harga,
+                'status' => 'pending',
                 'gambar_produk' => $cart->gambar_produk
             ]);
+
+             // Set your Merchant Server Key
+            \Midtrans\Config::$serverKey = config('midtrans.serverKey');
+            // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
+            \Midtrans\Config::$isProduction = false;
+            // Set sanitization on (default)
+            \Midtrans\Config::$isSanitized = true;
+            // Set 3DS transaction for credit card to true
+            \Midtrans\Config::$is3ds = true;
+
+            $params = array(
+                'transaction_details' => array(
+                    'order_id' => rand(),
+                    'gross_amount' => $total_harga,
+                )
+            );
+            
+            $snapToken = \Midtrans\Snap::getSnapToken($params);
+            $orders->snap_token = $snapToken;
+            $orders->save();
         }
 
         return redirect()->to("/transaksi/{$id}")->with('success', 'Berhasil checkout');
