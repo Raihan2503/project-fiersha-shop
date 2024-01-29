@@ -11,10 +11,10 @@
 <div class="jumbotron bg-dark text-white d-flex flex-column">
   <div class="position-relative overflow-hidden p-3 p-md-5 text-center">
     <div class="col-md-6 p-lg-5 mx-auto my-5">
-      <h1 class="display-3 fw-bold main-text">Fiersha Shop</h1>
+      <h1 class="display-3 fw-bold main-text">Ferisya Shop</h1>
       <h3 class="fw-light mb-3">Service is Main And Enjoyable</h3>
       <div class="d-flex gap-3 justify-content-center lead fw-normal">
-        <p class="lead">Fiersha Shop customers are the king</p>
+        <p class="lead">Ferisya Shop customers are the king</p>
       </div>
     </div>
     <div class="product-device shadow-sm d-none d-md-block"></div>

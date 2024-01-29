@@ -44,8 +44,12 @@ Route::get('/register', [Register::class, 'index']);
 // middleware
 Route::middleware(['auth.check'])->group(function () {
     // Definisi route yang hanya dapat diakses oleh pengguna yang sudah login
+    Route::post('/keranjang/{id_produk}', [HomeController::class, 'store'])->name('keranjang.store');
+    Route::post('/checkout', [CheckoutController::class, 'save'])->name('checkout.save');
     Route::get('/keranjang', [KeranjangController::class, 'index']);
     Route::get('/checkout', [KeranjangController::class, 'index']);
+    Route::get('/checkout/{id_produk}', [CheckoutController::class, 'show'])->name('checkout.show');
+    Route::post('/checkout/{id_produk}', [CheckoutController::class, 'store'])->name('checkout.store');
     Route::get('/transaksi', [Transaksi::class, 'index']);
     Route::get('/transaksi/{id}', [Transaksi::class, 'show'])->name('transaksi.show');
 });

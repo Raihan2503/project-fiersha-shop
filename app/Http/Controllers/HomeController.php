@@ -22,17 +22,21 @@ class HomeController extends Controller
     }
 
     public function store($id_produk){
-       $items = Product::where('id_produk', $id_produk)->get();
-       $cart = new Carts();
-       foreach ($items as $item) {
-            $dbCart = Carts::create([
-                'product_id' => $item->id_produk,
-                'nama_produk' => $item->nama_produk,
-                'deskripsi_produk' => $item->deskripsi_produk,
-                'harga' => $item->harga,
-                'gambar_produk' => $item->gambar_produk,
-                'user_id' => Auth::user()->id,
-            ]);
+       try {
+        $items = Product::where('id_produk', $id_produk)->get();
+        $cart = new Carts();
+        foreach ($items as $item) {
+             $dbCart = Carts::create([
+                 'product_id' => $item->id_produk,
+                 'nama_produk' => $item->nama_produk,
+                 'deskripsi_produk' => $item->deskripsi_produk,
+                 'harga' => $item->harga,
+                 'gambar_produk' => $item->gambar_produk,
+                 'user_id' => Auth::user()->id,
+             ]);
+        }
+       } catch (\Throwable $th) {
+            return redirect()->to('/login');
        }
 
        return redirect()->to('/')->with('success', 'Berhasil di tambahkan ke keranjang');
